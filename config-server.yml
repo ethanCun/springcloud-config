@@ -1,0 +1,42 @@
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 8201
+spring:
+  #应用名称
+  application:
+    #应用名称大写 小写后也变成了大写，所以消费客户端的REST_URI_PREFIX也必须要大写
+    name: SPRINGCLOUD-PROVIDER-USER
+  profiles: dev
+
+# eureka配置
+eureka:
+  client:
+    service-url:
+      # 发布到单机版注册中心
+      #defaultZone: http://localhost:7001/eureka/
+      # 发布到集群版注册中心
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+
+
+---
+server:
+  port: 8202
+spring:
+  #应用名称
+  application:
+    #应用名称大写 小写后也变成了大写，所以消费客户端的REST_URI_PREFIX也必须要大>写
+    name: SPRINGCLOUD-PROVIDER-USER
+  profiles: prod
+
+# eureka配置
+eureka:
+  client:
+    service-url:
+      # 发布到单机版注册中心
+      #defaultZone: http://localhost:7001/eureka/
+      # 发布到集群版注册中心
+      defaultZone: http://eureka7001.com:7001/eureka/,http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
