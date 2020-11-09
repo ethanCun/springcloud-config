@@ -4,18 +4,16 @@ spring:
 
 ---
 spring:
-  profile: dev
+  profiles: dev
   application:
     name: dev
 
----
 
 ---
 spring:
-  profile: prod
+  profiles: prod
   application:
     name: prod
 
----
    
 
